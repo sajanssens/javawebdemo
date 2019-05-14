@@ -25,7 +25,10 @@ public class RegistrationServlet extends HttpServlet {
 
         Contact contact = new Contact(firstname, lastname, email);
         contactDao.add(contact);
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         contactDao.getAllContacts().forEach(System.out::println);
     }
 }
