@@ -1,4 +1,4 @@
-package com.example;
+package com.example.servlets;
 
 import com.example.dao.ContactDao;
 import com.example.domain.Contact;
@@ -17,7 +17,7 @@ public class RegistrationServlet extends HttpServlet {
     private ContactDao contactDao = ContactDao.INSTANCE;
 
     @Override
-        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String firstname = req.getParameter("firstname");
         String lastname = req.getParameter("lastname");
         String email = req.getParameter("email");
@@ -29,14 +29,16 @@ public class RegistrationServlet extends HttpServlet {
         Contact contact = new Contact(firstname, lastname, email);
         contactDao.add(contact);
 
-
         String staticpath = "/registrationresponse.html";
 
-        String dynamicpath = "/createregistrationresponse";
+        String dynamicpath = "createregistrationresponse";
         req.setAttribute("contact", contact);
 
-        RequestDispatcher rq = req.getRequestDispatcher(dynamicpath);
-        rq.forward(req, resp);
+
+        // RequestDispatcher rq = req.getRequestDispatcher("/" +dynamicpath);
+        // rq.forward(req, resp);
+        // or
+        resp.sendRedirect(dynamicpath + "?email=" + contact.getEmail());
     }
 
     @Override

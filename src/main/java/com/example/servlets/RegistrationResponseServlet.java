@@ -1,4 +1,4 @@
-package com.example;
+package com.example.servlets;
 
 import com.example.dao.ContactDao;
 import com.example.domain.Contact;
@@ -24,6 +24,19 @@ public class RegistrationResponseServlet extends HttpServlet {
 
         String fn = contact.getFullname();
         String html = "<html><body><p> Thank you " + fn + " for contacting us</p></body></html>";
+
+        pw.println(html);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String email = req.getParameter("email");
+        Contact contact = dao.getContactByEmail(email);
+
+        PrintWriter pw = resp.getWriter();
+
+        String fn = contact.getFullname();
+        String html = "<html><body><p> Thank you " + fn + " for contacting us from " + email + "</p></body></html>";
 
         pw.println(html);
     }

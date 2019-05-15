@@ -5,10 +5,29 @@
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
         <servlet-name>MyServlet</servlet-name>
-        <servlet-class>com.example.MyServlet</servlet-class>
+        <servlet-class>com.example.servlets.MyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/my/*</url-pattern>
     </servlet-mapping>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>adminpages</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
 </web-app>
