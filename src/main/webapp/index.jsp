@@ -5,5 +5,6 @@
 <a href="my">MyServlet</a><BR>
 <a href="registrationform.html">Register</a><BR>
 <a href="registrationform_styled.html">Register in style</a><BR>
+<a href="contacts">Get all contacts</a><BR>
 </body>
 </html>

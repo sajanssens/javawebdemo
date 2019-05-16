@@ -3,7 +3,6 @@ package com.example.servlets;
 import com.example.dao.ContactDao;
 import com.example.domain.Contact;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,10 +38,5 @@ public class RegistrationServlet extends HttpServlet {
         // rq.forward(req, resp);
         // or
         resp.sendRedirect(dynamicpath + "?email=" + contact.getEmail());
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        contactDao.getAllContacts().forEach(System.out::println);
     }
 }
