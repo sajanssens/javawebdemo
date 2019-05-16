@@ -12,6 +12,15 @@
         <url-pattern>/my/*</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>RequestLog</filter-name>
+        <filter-class>com.example.filters.RequestLogFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>RequestLog</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>adminpages</web-resource-name>

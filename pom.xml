@@ -46,19 +46,19 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
             <version>${tomcat.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope><!--make these compile when using runner-->
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-logging-juli</artifactId>
             <version>${tomcat.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <version>${jasper.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
 
         <!--for Runner-class when using more from jsp's: -->
