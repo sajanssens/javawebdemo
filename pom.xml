@@ -60,7 +60,11 @@
             <version>${jasper.version}</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
         <!--for Runner-class when using more from jsp's: -->
         <!--<dependency>
             <groupId>org.apache.tomcat</groupId>
