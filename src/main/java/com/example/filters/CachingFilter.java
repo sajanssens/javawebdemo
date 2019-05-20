@@ -43,4 +43,12 @@ public class CachingFilter implements Filter {
         // dont forward to servlet, but return previously cached data
         response.getOutputStream().write(responseData);
     }
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
+
+    @Override
+    public void destroy() {
+    }
 }

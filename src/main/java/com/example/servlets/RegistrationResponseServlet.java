@@ -10,20 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/createregistrationresponse")
+@WebServlet("/registrationresponse")
 public class RegistrationResponseServlet extends HttpServlet {
 
     private ContactDao dao = ContactDao.INSTANCE;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String email = req.getParameter("email");
-        Contact contact = dao.getContactByEmail(email);
+        Contact contact = (Contact) req.getAttribute("contact");
+        String fn = contact.getFullname();
 
         PrintWriter pw = resp.getWriter();
 
-        String fn = contact.getFullname();
-        String html = "<html><body><p> Thank you " + fn + " for contacting us</p></body></html>";
+        String html = "<html><body><p> Thank you " + fn + " for contacting us!</p></body></html>";
 
         pw.println(html);
     }
@@ -32,11 +31,11 @@ public class RegistrationResponseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String email = req.getParameter("email");
         Contact contact = dao.getContactByEmail(email);
+        String fn = contact.getFullname();
 
         PrintWriter pw = resp.getWriter();
 
-        String fn = contact.getFullname();
-        String html = "<html><body><p> Thank you " + fn + " for contacting us from " + email + "</p></body></html>";
+        String html = "<html><body><p> Thank you " + fn + " for contacting us from " + email + "!</p></body></html>";
 
         pw.println(html);
     }

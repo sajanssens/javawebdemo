@@ -27,16 +27,15 @@ public class RegistrationServlet extends HttpServlet {
 
         Contact contact = new Contact(firstname, lastname, email);
         contactDao.add(contact);
-
-        String staticpath = "/registrationresponse.html";
-
-        String dynamicpath = "createregistrationresponse";
         req.setAttribute("contact", contact);
 
+        String dynamicpath = "registrationresponse";
+        String staticpath = dynamicpath + ".html";
+        String path = staticpath;
 
-        // RequestDispatcher rq = req.getRequestDispatcher("/" +dynamicpath);
+        // RequestDispatcher rq = req.getRequestDispatcher("/" + path);
         // rq.forward(req, resp);
         // or
-        resp.sendRedirect(dynamicpath + "?email=" + contact.getEmail());
+        resp.sendRedirect(path + "?email=" + contact.getEmail());
     }
 }

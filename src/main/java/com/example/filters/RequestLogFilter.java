@@ -13,4 +13,12 @@ public class RequestLogFilter implements Filter {
 
         System.out.println(("Request took (ms): " + duration));
     }
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
+
+    @Override
+    public void destroy() {
+    }
 }
