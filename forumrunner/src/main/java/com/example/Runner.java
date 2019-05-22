@@ -13,9 +13,8 @@ import java.io.File;
 public class Runner {
     // move this class to src/MAIN/java/.... to let it work at runtime and
     // make the necessary dependencies in pom.xml compile-scoped.
-    public static void main(String[] args) throws LifecycleException,
-            InterruptedException, ServletException {
-        String webappDirLocation = "src/main/webapp/";
+    public static void main(String[] args) throws LifecycleException, ServletException {
+        String webappDirLocation = "forumwebapp/src/main/webapp/";
         System.out.println("configuring app with basedir: " + new File("./" + webappDirLocation).getAbsolutePath());
 
         Tomcat tomcat = new Tomcat();
@@ -25,7 +24,7 @@ public class Runner {
 
         StandardContext ctx = (StandardContext) tomcat.addWebapp("/forum", new File(webappDirLocation).getAbsolutePath());
 
-        File additionWebInfClasses = new File("target/classes");
+        File additionWebInfClasses = new File("forumwebapp/target/classes");
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                 additionWebInfClasses.getAbsolutePath(), "/"));

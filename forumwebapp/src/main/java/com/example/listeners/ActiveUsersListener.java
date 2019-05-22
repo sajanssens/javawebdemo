@@ -10,13 +10,13 @@ public class ActiveUsersListener implements HttpSessionListener {
     public void sessionCreated(HttpSessionEvent se) {
         count++;
         System.out.println("ActiveUsers: " + count);
-        se.getSession().setAttribute("activeUsers", count);
+        // se.getSession().setAttribute("activeUsers", count);
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
         count--;
         System.out.println("ActiveUsers: " + count);
-        se.getSession().setAttribute("activeUsers", count);
+        // se.getSession().setAttribute("activeUsers", count);
     }
 }
