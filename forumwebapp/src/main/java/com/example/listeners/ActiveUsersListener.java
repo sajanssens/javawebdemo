@@ -4,19 +4,22 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 public class ActiveUsersListener implements HttpSessionListener {
-    private static int count;
 
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        count++;
+        ActiveUsers.INSTANCE.increment();
+
+        long count = ActiveUsers.INSTANCE.count();
         System.out.println("ActiveUsers: " + count);
-        // se.getSession().setAttribute("activeUsers", count);
+        se.getSession().setAttribute("activeUsers", count);
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
-        count--;
+        ActiveUsers.INSTANCE.decrement();
+
+        long count = ActiveUsers.INSTANCE.count();
         System.out.println("ActiveUsers: " + count);
-        // se.getSession().setAttribute("activeUsers", count);
+        se.getSession().setAttribute("activeUsers", count);
     }
 }
