@@ -11,8 +11,7 @@ import javax.servlet.ServletException;
 import java.io.File;
 
 public class Runner {
-    // move this class to src/MAIN/java/.... to let it work at runtime and
-    // make the necessary dependencies in pom.xml compile-scoped.
+
     public static void main(String[] args) throws LifecycleException, ServletException {
         String webappDirLocation = "forumwebapp/src/main/webapp/";
         System.out.println("configuring app with basedir: " + new File("./" + webappDirLocation).getAbsolutePath());
