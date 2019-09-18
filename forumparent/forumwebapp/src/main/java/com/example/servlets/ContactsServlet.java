@@ -3,7 +3,6 @@ package com.example.servlets;
 import com.example.dao.ContactDao;
 import com.example.domain.Contact;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,6 @@ import java.util.List;
 public class ContactsServlet extends HttpServlet {
 
     private ContactDao contactDao = ContactDao.INSTANCE;
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
