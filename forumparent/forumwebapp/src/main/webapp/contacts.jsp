@@ -1,20 +1,9 @@
-<%
-    Object email = session.getAttribute("email");
-    String emailString = "";
-    if (email == null) {
-        response.sendRedirect(request.getContextPath() + "/registrationform_styled.html");
-    } else {
-        emailString = (String) email;
-    }
-%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Contacts</title>
 </head>
 <body>
-<p>Welkom <%= emailString %>!</p>
 <p>Dit zijn alle geregistreerde contactpersonen:</p>
 <table border="1">
     <tr>
