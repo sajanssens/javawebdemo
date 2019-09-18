@@ -23,10 +23,9 @@ public class Runner {
 
         StandardContext ctx = (StandardContext) tomcat.addWebapp("/forum", new File(webappDirLocation).getAbsolutePath());
 
-        File additionWebInfClasses = new File("forumwebapp/target/classes");
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
-                additionWebInfClasses.getAbsolutePath(), "/"));
+                new File("forumwebapp/target/classes").getAbsolutePath(), "/"));
         ctx.setResources(resources);
 
         tomcat.start();

@@ -11,5 +11,5 @@ public enum ActiveUsers {
 
     public void increment() { activeUsers.incrementAndGet(); }
 
-    public void decrement() {activeUsers.decrementAndGet(); }
+    public void decrement() { activeUsers.decrementAndGet(); }
 }

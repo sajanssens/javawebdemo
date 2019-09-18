@@ -9,17 +9,9 @@ import java.util.List;
 public enum ContactDao {
     INSTANCE;
 
-
-
     private HashMap<String, Contact> contacts = new HashMap<>();
 
-    private ContactDao() {
-
-    }
-
-    public void add(Contact contact) {
-        contacts.put(contact.getEmail(), contact);
-    }
+    public void add(Contact contact) { contacts.put(contact.getEmail(), contact); }
 
     public Contact getContactByEmail(String email) {
         return contacts.get(email);
@@ -28,5 +20,4 @@ public enum ContactDao {
     public List<Contact> getAllContacts() {
         return new ArrayList<>(contacts.values());
     }
-
 }
