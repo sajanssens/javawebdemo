@@ -22,7 +22,15 @@ public class RegistrationResponseServlet extends HttpServlet {
 
         PrintWriter pw = resp.getWriter();
 
-        String html = "<html><body><p> Thank you " + fn + " for contacting us!</p></body></html>";
+        String html = """
+                        <html>
+                            <body>
+                                <p>Thank you $fn for contacting us!</p>
+                                <a href="index.jsp">Home</a>
+                             </body>
+                          </html>
+                      """
+                .replace("$fn", fn);
 
         pw.println(html);
     }
@@ -35,7 +43,16 @@ public class RegistrationResponseServlet extends HttpServlet {
 
         PrintWriter pw = resp.getWriter();
 
-        String html = "<html><body><p> Thank you " + fn + " for contacting us from " + email + "!</p></body></html>";
+        String html = """
+                        <html>
+                            <body>
+                                <p>Thank you $fn for contacting us from $email!</p>
+                                <a href="index.jsp">Home</a>
+                             </body>
+                          </html>
+                      """
+                .replace("$fn", fn)
+                .replace("$email", email);
 
         pw.println(html);
     }

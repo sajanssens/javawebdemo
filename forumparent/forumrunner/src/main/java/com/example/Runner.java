@@ -30,5 +30,10 @@ public class Runner {
 
         tomcat.start();
         tomcat.getServer().await();
+
+        String test = """
+                        When this compiles,
+                        Java13 is used. Everything is "ok".
+                      """;
     }
 }

@@ -13,29 +13,18 @@
 
     <name>Forum Webapp Runner</name>
 
-    <properties>
-        <tomcat.version>9.0.0.M6</tomcat.version>
-        <jasper.version>8.5.23</jasper.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
-            <version>${tomcat.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-logging-juli</artifactId>
-            <version>${tomcat.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-            <version>${jasper.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

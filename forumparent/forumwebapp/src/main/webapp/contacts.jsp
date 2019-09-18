@@ -14,8 +14,14 @@
     <title>Contacts</title>
 </head>
 <body>
-Welkom <%= emailString %>.
-<table>
+<p>Welkom <%= emailString %>!</p>
+<p>Dit zijn alle geregistreerde contactpersonen:</p>
+<table border="1">
+    <tr>
+        <th>Voornaam</th>
+        <th>Achternaam</th>
+        <th>E-mailadres</th>
+    </tr>
     <c:forEach var="contact" items="${contacts}">
         <tr>
             <td><c:out value="${contact.firstname}" escapeXml="true"/></td>
