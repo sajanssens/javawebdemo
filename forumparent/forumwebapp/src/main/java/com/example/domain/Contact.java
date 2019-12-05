@@ -11,7 +11,6 @@ public class Contact {
     private String lastname;
     private String email;
 
-
     public String getFullname() {
         return firstname + " " + lastname;
     }

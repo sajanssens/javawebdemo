@@ -4,12 +4,12 @@
     <title>Contacts</title>
 </head>
 <body>
-<p>Dit zijn alle geregistreerde contactpersonen:</p>
+<p>All registered contacts:</p>
 <table border="1">
     <tr>
-        <th>Voornaam</th>
-        <th>Achternaam</th>
-        <th>E-mailadres</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
     </tr>
     <c:forEach var="contact" items="${contacts}">
         <tr>
