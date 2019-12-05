@@ -31,10 +31,13 @@ public class RegistrationServlet extends HttpServlet {
         req.getSession().setAttribute("email", contact.getEmail());
 
         req.setAttribute("contact", contact);
-        req.getRequestDispatcher("/registrationresponse").forward(req, resp);
+        // req.getRequestDispatcher("/registrationresponse").forward(req, resp);
 
         // or
-        // resp.sendRedirect("registrationresponse.html?email=" + contact.getEmail());
+        // resp.sendRedirect("registrationresponse.html");
+
+        // or
+        resp.sendRedirect("registrationresponse?email=" + contact.getEmail());
 
     }
 }
