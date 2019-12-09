@@ -10,8 +10,9 @@ public class ActiveUsersListener implements HttpSessionListener {
         ActiveUsers.INSTANCE.increment();
 
         long count = ActiveUsers.INSTANCE.count();
-        System.out.println("ActiveUsers: " + count);
+        System.out.println("sessionCreated; activeUsers=" + count);
         se.getSession().setAttribute("activeUsers", count);
+        se.getSession().setMaxInactiveInterval(10); // each session has a timeout of 10 seconds (inactivity)
     }
 
     @Override
@@ -19,7 +20,7 @@ public class ActiveUsersListener implements HttpSessionListener {
         ActiveUsers.INSTANCE.decrement();
 
         long count = ActiveUsers.INSTANCE.count();
-        System.out.println("ActiveUsers: " + count);
+        System.out.println("sessionDestroyed; activeUsers=" + count);
         se.getSession().setAttribute("activeUsers", count);
     }
 }

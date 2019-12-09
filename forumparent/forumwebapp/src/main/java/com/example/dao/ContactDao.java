@@ -13,9 +13,7 @@ public enum ContactDao {
 
     public void add(Contact contact) { contacts.put(contact.getEmail(), contact); }
 
-    public Contact getContactByEmail(String email) {
-        return contacts.get(email);
-    }
+    public Contact getContactByEmail(String email) { return contacts.get(email); }
 
     public List<Contact> getAllContacts() {
         return new ArrayList<>(contacts.values());

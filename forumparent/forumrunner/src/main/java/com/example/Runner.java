@@ -18,6 +18,7 @@ public class Runner {
 
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8082);
+        tomcat.addRole("bram", "user");
         tomcat.addRole("bram", "admin");
         tomcat.addUser("bram", "bram");
 

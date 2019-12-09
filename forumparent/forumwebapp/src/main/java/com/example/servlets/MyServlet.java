@@ -8,11 +8,11 @@ public class MyServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        System.out.println("bram!!!!");
+        System.out.println("MyServlet.GET");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        System.out.println("POST bram");
+        System.out.println("MyServlet.POST");
     }
 }

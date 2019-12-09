@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/register")
+@WebServlet("/register")
 public class RegistrationServlet extends HttpServlet {
 
     private ContactDao contactDao = ContactDao.INSTANCE;
@@ -31,13 +31,13 @@ public class RegistrationServlet extends HttpServlet {
         req.getSession().setAttribute("email", contact.getEmail());
 
         req.setAttribute("contact", contact);
-        // req.getRequestDispatcher("/registrationresponse").forward(req, resp);
+        req.getRequestDispatcher("/registrationresponse").forward(req, resp);
 
         // or
         // resp.sendRedirect("registrationresponse.html");
 
         // or
-        resp.sendRedirect("registrationresponse?email=" + contact.getEmail());
+        // resp.sendRedirect("registrationresponse?email=" + contact.getEmail());
 
     }
 }
