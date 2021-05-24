@@ -72,18 +72,18 @@
 
     <login-config>
         <!-- not secure: user:pass are submitted in header Authorization: Basic YnJhbTpicmFt with base64 encoding -->
-        <auth-method>BASIC</auth-method>
+        <!--<auth-method>BASIC</auth-method>-->
 
         <!-- not secure but a bit better since user:pass are encoded -->
         <!--<auth-method>DIGEST</auth-method>-->
 
         <!-- not secure: user:pass are submitted in form data in http post request...-->
-        <!--<auth-method>FORM</auth-method>
+        <auth-method>FORM</auth-method>
         <realm-name>file</realm-name>
         <form-login-config>
             <form-login-page>/login.jsp</form-login-page>
             <form-error-page>/error.jsp</form-error-page>
-        </form-login-config>-->
+        </form-login-config>
 
         <!-- secure -->
         <!--<auth-method>CLIENT-CERT</auth-method>-->
