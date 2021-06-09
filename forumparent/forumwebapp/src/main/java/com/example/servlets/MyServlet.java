@@ -12,6 +12,7 @@ public class MyServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("MyServlet.GET");
 
+        readFromRequest(req); // http://localhost:8082/my?name=john
         writeToResponse(req, resp);
     }
 
@@ -20,11 +21,16 @@ public class MyServlet extends HttpServlet {
         System.out.println("MyServlet.POST");
     }
 
+    private void readFromRequest(HttpServletRequest req) {
+        String name = req.getParameter("name");
+        System.out.printf("Name = %s", name);
+    }
+
     private void writeToResponse(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Write to the response, for example either:
 
         // 1) text
-        // resp.getWriter().write("Hello");
+        resp.getWriter().write("Hello");
 
         // 2) json
         // resp.getWriter().write("{\"message\": \"Hello\"}");
@@ -49,6 +55,6 @@ public class MyServlet extends HttpServlet {
         //         """);
 
         // 5) Using a jsp
-        req.getRequestDispatcher("myservlet.jsp").forward(req, resp);
+        // req.getRequestDispatcher("myservlet.jsp").forward(req, resp);
     }
 }
